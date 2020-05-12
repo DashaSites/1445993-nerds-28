@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Dasha Kholobaeva](https://up.htmlacademy.ru/htmlcss/28/user/1445993).
-* Наставник: `Неизвестно`.
+* Наставник: [Евгений Алипкин](https://htmlacademy.ru/profile/ealipkin).
 
 ---
 
