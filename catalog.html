@@ -6,7 +6,7 @@
   <title>HTML Academy: Нёрдс</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
-  <link href="normalize.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -19,12 +19,12 @@
       <ul class="site-navigation">
         <li><a href="" class="site-navigation-item">Студия</a></li>
         <li><a href="blank.html" class="site-navigation-item">Клиенты</a></li>
-        <li><a href="catalog.html" class="site-navigation-item">Магазин</a></li>
+        <li><a href="catalog.html" class="site-navigation-item-active">Магазин</a></li>
         <li><a href="blank.html" class="site-navigation-item">Контакты</a></li>
       </ul>
       <div>
         <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="">
-        <a href="blank.html" class="user-navigation">Корзина</a>
+        <a href="blank.html" class="user-navigation user-navigation-active">Корзина</a>
       </div>
     </nav>
   </header>
@@ -140,17 +140,15 @@
       <div>
         <h5 class="page-subtitle">Сортировать:</h5>
         <nav>
-          <ul class="breadcrumbs">
-            <li><a class="breadcrumbs-current">По цене</a></li>
+          <ul class="categorize">
+            <li><a class="categorize-current">По цене</a></li>
             <li><a href="blank.html">По типу</a></li>
             <li><a href="blank.html">По названию</a></li>
           </ul>
 
           <ul class="sortation">
-            <li><a title="Сортировка по убыванию" class="sortation-decrease"></a></li>
-            <!--СВЕРСТАЮ В CSS-->
-            <li><a href="blank.html" title="Сортировка по возрастанию" class="sortation-increase"></a></li>
-            <!--СВЕРСТАЮ В CSS-->
+            <li><a title="Сортировка по убыванию" class="sort-decrease"></a></li>
+            <li><a href="blank.html" title="Сортировка по возрастанию" class="sort-increase"></a></li>
           </ul>
         </nav>
       </div>
@@ -158,9 +156,9 @@
       <ul class="catalog-items">
         <li>
           <div>
-            <img src="img/catalog-header-brown.png" width="360" height="40" alt="" class="catalog-item-header">
+            <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/sedona-layout.jpg" width="360" height="580" alt="Макет Sedona">
+          <img src="img/sedona-layout.jpg" width="360" height="580" alt="Макет Sedona" class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">Sedona</h3>
             <p class="catalog-item-description">Информационный сайт для туристов</p>
@@ -172,7 +170,7 @@
           <div>
             <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/pink-layout.jpg" width="358" height="578" alt="Макет Pink">
+          <img src="img/pink-layout.jpg" width="358" height="578" alt="Макет Pink" class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">Pink App</h3>
             <p class="catalog-item-description">Продуктовый лендинг приложения для iOS и Android</p>
@@ -184,7 +182,8 @@
           <div>
             <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/borodinski-layout.jpg" width="358" height="578" alt="Макет Borodinski">
+          <img src="img/borodinski-layout.jpg" width="358" height="578" alt="Макет Borodinski"
+            class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">Barbershop</h3>
             <p class="catalog-item-description">Сайт салона красоты. Для мужчин, да.</p>
@@ -196,7 +195,7 @@
           <div>
             <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/mishka-layout.jpg" width="358" height="578" alt="Макет Mishka">
+          <img src="img/mishka-layout.jpg" width="358" height="578" alt="Макет Mishka" class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">Mishka</h3>
             <p class="catalog-item-description">Интернет-магазин вязаных игрушек</p>
@@ -208,7 +207,7 @@
           <div>
             <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/ucheba-layout.jpg" width="358" height="578" alt="Макет Учеба">
+          <img src="img/ucheba-layout.jpg" width="358" height="578" alt="Макет Учеба" class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">A Plus</h3>
             <p class="catalog-item-description">Лендинг курсов повышения квалификации</p>
@@ -220,7 +219,7 @@
           <div>
             <img src="img/catalog-header-grey.png" width="360" height="40" alt="" class="catalog-item-header">
           </div>
-          <img src="img/kvast-layout.jpg" width="358" height="578" alt="Макет Kvast">
+          <img src="img/kvast-layout.jpg" width="358" height="578" alt="Макет Kvast" class="catalog-item-image">
           <div class="catalog-item">
             <h3 class="page-subtitle catalog-item-name">Кваст</h3>
             <p class="catalog-item-description">Промо-сайт производителя крафтового кваса</p>
@@ -230,7 +229,7 @@
       </ul>
 
       <ul class="pagination-list">
-        <li><a>1</a></li>
+        <li class="pagination-item-current"><a>1</a></li>
         <li class="pagination-item"><a href="blank.html">2</a></li>
         <li class="pagination-item"><a href="blank.html">3</a></li>
         <li class="pagination-item"><a href="blank.html" class="button button-grey">Следующая</a></li>
@@ -251,24 +250,23 @@
 
         <button type="button" class="button feedback-button">Напишите нам</button>
 
-        <form action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="input">
-            <legend class="write-us">Напишите нам</legend>
+        <form action="https://echo.htmlacademy.ru" method="post" class="write-us-popup popup">
+          <fieldset>
+            <legend class="popup-title">Напишите нам</legend>
 
-            <label for="your-name">
-              <span class="input-item">Ваше имя</span>
-              <input id="your-name" type="text" name="name" placeholder="Имя Фамилия" required class="input input-1">
+            <label>
+              <span class="input-label">Ваше имя</span>
+              <input type="text" name="name" placeholder="Имя Фамилия" required class="input">
             </label>
 
-            <label for="your-item">
-              <span class="input-email">Ваш email</span>
-              <input id="your-email" type="text" name="email" placeholder="email@example.com" required
-                class="input input-2">
+            <label>
+              <span class="input-label">Ваш email</span>
+              <input type="text" name="email" placeholder="email@example.com" required class="input">
             </label>
 
-            <label for="message-text">
-              <span class="input-item">Текст письма</span>
-              <textarea id="message-text" name="message" rows="4" required class="input input-2">
+            <label>
+              <span class="input-label">Текст письма</span>
+              <textarea name="message" rows="4" required class="input">
               В свободной форме
             </textarea>
             </label>

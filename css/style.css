@@ -1,40 +1,40 @@
 /* Variables */
 
-
-.visually-hidden {
-  display: none;
-  position: absolute;
-  clip: rect (0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-/* Не пойму, как подключить селектор/класс visually-hidden. Я задала здесь в CSS селектор (по инструкции отсюда https://htmlacademy.ru/blog/boost/frontend/short-12), но на сайте этот класс не работает, элементы не скрылысь.  */
-
 :root {
   --basic-black: #000000;
   --basic-dark-text: #283136;
+  --element-dark-grey: #231F20;
   --text-header-grey: #666666;
   --dark-grey: #4D4D4D;
   --another-grey: #DBDBDB;
+  --grey-hover: #DFDFDF;
   --one-more-grey: #D5D5D5;
   --pale-grey: #444444;
   --border-light-grey: #D7DCDE;
-  --border-dark-grey: #B4B9BB --grey-header-background: #A6A6A6;
+  --border-dark-grey: #B4B9BB;
   --light-grey-background: #EEEEEE;
-  --light-grey-socialmedia: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
+  --light-grey-socialmedia: #E1E1E1;
   --basic-white: #FFFFFF;
-
+  --grey-header-background: #A6A6A6;
   --red-light: #FB565A;
   --red-medium: #E74246;
   --red-dark: #D7373B;
+  --red-placeholder-invalid: #c0392b;
   --green-link: #00CA74;
   --green-hover: #00BC6C;
   --green-active: #00AA62;
   --yellow-link: #EFC84A;
   --yellow-hover: #EAB534;
   --yellow-active: #E5A722;
+}
+
+.visually-hidden {
+  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 body {
@@ -59,14 +59,12 @@ img {
   height: auto;
 }
 
-
-.logo-header:link,
 .logo-header:hover {
-  color: var(--basic-black);
+  opacity: 0.5;
 }
 
 .logo-header:active {
-  color: var(--grey-header-background);
+  opacity: 1;
 }
 
 .main-navigation {
@@ -79,41 +77,60 @@ img {
   background-color: transparent;
 }
 
+.sort-decrease {
+  width: 0;
+  height: 0;
+  border-top: 10px solid var(--element-dark-grey);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  display: block;
+}
+
+.sort-increase {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid var(--grey-header-background);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  display: block;
+}
+
+.site-navigation-item-active {
+  border-bottom: 2px solid red;
+  padding-bottom: 3px;
+  display: inline-block;
+  color: var(--basic-black);
+}
+
 .site-navigation {
   list-style: none;
 }
 
 .site-navigation-item,
 .user-navigation {
-  color: var (--basic-black)
+  color: var(--basic-black);
 }
 
 .site-navigation-item:hover,
 .user-navigation:hover {
-  color: var(--red-light)
+  color: var(--red-light);
 }
 
 .site-navigation-item:active,
 .user-navigation:active {
-  color: var(--basic-black) mix-blend-mode: normal;
+  color: var(--basic-black);
+  mix-blend-mode: normal;
   opacity: 0.3;
 }
 
-.site-navigation-item: ???,
-.user-navigation: ???
-/* Тут у меня два затыка: 1) не нашла в материалах, как обозначить состояние ссылки, когда соответствующая страница открыта? Это же не active (когда мы в моменте нажатия), а ужечто-то другое?
-2) как задать красную полоску. В макете она как бы нарисована на определенном расстоянии от ссылки. Ты, кажется, упоминал, что это будет проще, чем вставлять картинку... */
-
 .user-navigation {
-  background-color: var(--grey-header-background)
+  background-color: var(--grey-header-background);
 }
 
 .header-zone,
 .slider {
-  background-color: var (--light-grey-background)
+  background-color: var(--light-grey-background);
 }
-
-/* Здесь есть проблема: указанный фон задан и шапке, и диву со слайдерами. Причем он выходит за их преледы, заливая всю страницу. Я не поняла, как этого добиться в разметке: разве можно объединять <header> и часть <main>? Кажется, нельзя, ведь тогда я нарушу правило вкладываемости тегов. Что делать?*/
 
 .slide-title {
   color: var(--basic-black);
@@ -121,57 +138,41 @@ img {
   font-size: 55px;
   line-height: 55px;
   align-items: center;
+  margin: 0;
 }
 
 .slides {
   list-style: none;
+  margin: 0;
 }
 
 .button {
   color: var(--basic-white);
   background-color: var(--red-light);
-}
-
-.button.slide-button {
   font: inherit;
   text-align: center;
-  color: var(--basic-white);
-  vertical-align: middle;
   text-transform: uppercase;
-  background-color: var(--red-light);
-  /*А как задать ширину и высоту самой кнопок? Или это будет на следующих этапах, а сейчас только параметры шрифта и цвет фона? */
+  display: inline-block;
 }
 
-.button.slide-button:link {
-  font: inherit;
-  text-align: center;
-  color: var(--basic-white);
-  vertical-align: middle;
-  text-transform: uppercase;
-  background-color: var(--red-light);
-}
-
-.button.slide-button:hover {
-  font: inherit;
-  text-align: center;
-  color: var(--basic-white);
-  vertical-align: middle;
-  text-transform: uppercase;
+.button:hover {
   background-color: var(--red-medium);
 }
 
-.button.slide-button:active {
-  font: inherit;
-  text-align: center;
-  color: var(--basic-white);
-  opacity: 0.3;
-  vertical-align: middle;
-  text-transform: uppercase;
+.button:active {
+  color: rgba(255, 255, 255, 0.3);
   background-color: var(--red-dark);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border-radius: 3px;
+}
+
+.slide-button {
+  width: 240px;
+  height: 50px;
 }
 
 .slider-white-buttons {
-  color: var(--basic-white)
+  color: var(--basic-white);
 }
 
 .product-types {
@@ -183,63 +184,44 @@ img {
   font-size: 24px;
   line-height: 30px;
   text-transform: uppercase;
-  color: var(--basic-black)
+  color: var(--basic-black);
 }
 
-.button.button-red:link {
-  color: var(--basic-white);
-  background-color: var(--red-light);
-}
-
-.button.button-red:hover {
-  color: var(--basic-white);
-  background-color: var(--red-medium);
-}
-
-.button.button-red:active {
-  color: var(--basic-white);
-  opacity: 0.3;
-  background-color: var(--red-dark);
-}
-
-
-.button.button-green:link {
-  color: var(--basic-white);
+.button-green {
   background-color: var(--green-link);
 }
 
-.button.button-green:hover {
-  color: var(--basic-white);
+.button-green:hover {
   background-color: var(--green-hover);
 }
 
-.button.button-green:active {
-  color: var(--basic-white);
-  opacity: 0.3;
+.button-green:active {
+  color: rgba(255, 255, 255, 0.3);
   background-color: var(--green-active);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border-radius: 3px;
 }
 
-.button.button-yellow:link {
-  color: var(--basic-white);
+.button-yellow {
   background-color: var(--yellow-link);
 }
 
-.button.button-yellow:hover {
-  color: var(--basic-white);
+.button-yellow:hover {
   background-color: var(--yellow-hover);
 }
 
-.button.button-yellow:active {
-  color: var(--basic-white);
-  opacity: 0.3;
+.button-yellow:active {
+  color: rgba(255, 255, 255, 0.3);
   background-color: var(--yellow-active);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border-radius: 3px;
 }
 
 .studio-credo {
   font-weight: 500;
   font-size: 45px;
   line-height: 45px;
-  color: var(--basic-black)
+  color: var(--basic-black);
 }
 
 .studio-gives {
@@ -256,8 +238,6 @@ img {
 .work-types {
   list-style: none;
 }
-
-/* Красные полоски я, видимо, на более позднем этапе сверщу?*/
 
 .work-bonuses {
   list-style: none;
@@ -285,8 +265,12 @@ img {
   list-style: none;
 }
 
-.partner-logo:link {
+.partner-logo {
   opacity: 0.2;
+}
+
+.partner-logo:hover {
+  opacity: 1;
 }
 
 .partner-logo:active {
@@ -316,45 +300,34 @@ img {
   color: var(--basic-black);
 }
 
-.input-item:link {
+.input {
   font: inherit;
   font-size: 16px;
   line-height: 18px;
-  color: var(--pale-grey) opacity: 0.5;
+  color: var(--pale-grey);
   background-color: var(--basic-white);
   border: 2px solid var(--border-light-grey);
 }
 
-/*В стайлгайде по описанию цвет этого поля в состоянии покоя и ховера одинаковый, но выглядит, как будто ховер чуть темнее! Или у меня глюк? Посмотри, пожалуйста! */
-
-.input-item:hover {
-  font: inherit;
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--pale-grey) opacity: 0.5;
-  background-color: var(--basic-white);
-  border: 2px solid var(--border-dark-grey);
+.input:hover {
+  border-color: 2px solid var(--border-dark-grey);
 }
 
-.input-item:focus {
-  font: inherit;
-  font-size: 16px;
-  line-height: 18px;
-  background-color: var(--basic-white);
+.input:focus {
   color: var(--pale-grey);
-  border: 2px solid var(--basic-black);
+  border-color: 2px solid var(--basic-black);
 }
 
-.input-item:invalid {
-  font: inherit;
-  font-size: 16px;
-  line-height: 18px;
+.input:invalid {
+  color: var(--red-placeholder-invalid);
+  border-color: 2px solid var(--red-medium);
+}
+
+.input:invalid::placeholder {
   color: var(--red-medium);
-  background-color: var(--basic-white);
-  border: 2px solid var(--red-medium);
 }
 
-/*А красный крест, что в правом верхнем углу формы, — это, видимо, тоже материал из будущих лекций?*/
+
 
 .social-icons {
   list-style: none;
@@ -365,16 +338,17 @@ img {
   background-color: var(--light-grey-socialmedia);
 }
 
-/*Не могу понять, какой здесь цвет фона задан в фигме! Написано: "background: linear-gradient(0deg, #E74246, #E74246), #FFFFFF;", но кажется неправильным такое задавать. Но*/
-
 .social-item:hover {
   color: var(--basic-white);
   color: var(--red-medium);
 }
 
-.social-item:focus {
+.social-item:active img {
+  opacity: 0.3;
   color: var(--basic-white);
   color: var(--red-dark);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+
 }
 
 .social-heading {
@@ -398,28 +372,23 @@ img {
 
 .header-zone,
 .heading-catalog {
-  background-color: var (--light-grey-background)
+  background-color: var(--light-grey-background);
+  margin: 0;
 }
-
-/* Как и на главной, не понимаю, как натянуть вышеуказанный фон на всю верхнюю часть страницы, а не только на шапку и заголовок*/
 
 .heading-catalog {
   font-weight: 500;
   font-size: 55px;
   line-height: 55px;
   align-items: center;
-  color: var (--basic-black);
+  color: var(--basic-black);
 }
 
-
-
-
-
-.breadcrumbs {
+.categorize {
   list-style: none;
 }
 
-.breadcrumbs a {
+.categorize a {
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
@@ -427,30 +396,21 @@ img {
   opacity: 0.3;
 }
 
-.breadcrumbs-current {
+.categorize-current {
   color: var(--basic-black);
 }
 
-.breadcrumbs a:hover {
+.categorize a:hover {
   color: var(--basic-black);
   opacity: 0.6;
 }
 
-breadcrumbs a:active {
+.categorize a:active {
   color: var(--basic-black);
 }
 
 .sort-triangles {
   list-style: none;
-}
-
-.sortation-decrease {
-  /* Я хотела взять треугольники отсюда https://www.cssportal.com/css3-shapes/ , но оказалось, что по критериям проекта нам запрещено использовать селекторы-ID. Тогда как^ вставлю картинкой SVG? */
-}
-
-.sortation-increase {
-
-  /* То же, что и коммент выше */
 }
 
 .filter ul {
@@ -486,7 +446,6 @@ breadcrumbs a:active {
 .checkbox-option:link {
   background-color: var(--dark-grey);
   opacity: 0.4;
-  /* "Состояние покоя — это :link ?*/
 }
 
 .radio-icon:hover,
@@ -504,14 +463,23 @@ breadcrumbs a:active {
   opacity: 0.1;
 }
 
-/* Не знаю, правильный вариант с :disabled. */
-
-.button.button-grey {
+.button-grey {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-black);
   background-color: var(--light-grey-background);
+}
+
+.button-grey:hover {
+  background-color: var(--grey-hover);
+}
+
+.button-grey:active {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: var(--one-more-grey);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border-radius: 3px;
 }
 
 .catalog-items {
@@ -531,10 +499,16 @@ breadcrumbs a:active {
 .catalog-item-header:link {
   background-color: var(--dark-grey);
   opacity: 0.12;
+  margin: 0;
 }
 
 .catalog-item-header:hover {
   background-color: var(--dark-grey);
+  margin: 0;
+}
+
+.catalog-item-image {
+  margin: 0;
 }
 
 .catalog-item-name:hover {
@@ -566,30 +540,25 @@ breadcrumbs a:active {
   list-style: none;
 }
 
-.pagination-item: /* Какой псевдокласс надо использовать для состояния "активного пункта?*/ {
+.pagination-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-black);
-  background-color:
-    /* Не понимаю по макету, какой здесь цвет фона. */
-    border: 3px solid var(--another-grey);
+  background-color: var(--light-grey-background) border: none;
 }
 
-.pagination-item:link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--basic-black);
-  background-color: var(--light-grey-background)
-    border: none;
+.pagination-item:hover {
+  background-color: var(--grey-hover);
 }
 
 .pagination-item:active {
-  font-weight: 500;
-font-size: 16px;
-line-height: 18px;
-color: var(--basic-black);
-opacity: 0.3;
-background-color: var(--one-more-grey);
-} /* :active, как я поняла из интеркурсов, используется для состояния "нажатости" */
+
+  opacity: 0.3;
+  background-color: var(--one-more-grey);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+}
+
+.pagination-item-current {
+  background-color: var(--one-more-grey);
+}

@@ -6,7 +6,7 @@
   <title>HTML Academy: Нёрдс</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
-  <link href="normalize.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -17,14 +17,14 @@
         <img src="img/nerds-logo.svg" width="160" height="66" alt="Логотип дизайн-студии Нёрдс">
       </a>
       <ul class="site-navigation">
-        <li><a href="" class="site-navigation-item">Студия</a></li>
+        <li><a href="" class="site-navigation-item-active">Студия</a></li>
         <li><a href="blank.html" class="site-navigation-item">Клиенты</a></li>
         <li><a href="catalog.html" class="site-navigation-item">Магазин</a></li>
         <li><a href="blank.html" class="site-navigation-item">Контакты</a></li>
       </ul>
       <div>
         <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="">
-        <a href="blank.html" class="user-navigation">Корзина</a>
+        <a href="blank.html" class="user-navigation user-navigation-active">Корзина</a>
       </div>
     </nav>
   </header>
@@ -76,7 +76,7 @@
         <img src="img/websites-optimized.jpg" width="300" height="146" alt="Веб-сайты" class="product-type">
         <h3 class="product-types-titles">Веб-сайты</h3>
         <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
-        <a href="blank.html" class="button button-red">Заказать</a>
+        <a href="blank.html" class="button">Заказать</a>
       </li>
       <br><br>
       <li>
@@ -180,23 +180,23 @@
 
         <button type="button" class="button feedback-button">Напишите нам</button>
 
-        <form action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="input">
-            <legend class="write-us">Напишите нам</legend>
+        <form action="https://echo.htmlacademy.ru" method="post" class="write-us-popup popup">
+          <fieldset>
+            <legend class="popup-title">Напишите нам</legend>
 
-            <label for="your-name">
-              <span class="input-item">Ваше имя</span>
-              <input id="your-name" type="text" name="name" placeholder="Имя Фамилия" required class="input input-1">
+            <label>
+              <span class="input-label">Ваше имя</span>
+              <input type="text" name="name" placeholder="Имя Фамилия" required class="input">
             </label>
 
-            <label for="your-item">
-              <span class="input-email">Ваш email</span>
-              <input id="your-email" type="text" name="email" placeholder="email@example.com" required class="input input-2">
+            <label>
+              <span class="input-label">Ваш email</span>
+              <input type="text" name="email" placeholder="email@example.com" required class="input">
             </label>
 
-            <label for="message-text">
-              <span class="input-item">Текст письма</span>
-              <textarea id="message-text" name="message" rows="4" required class="input input-2">
+            <label>
+              <span class="input-label">Текст письма</span>
+              <textarea name="message" rows="4" required class="input">
               В свободной форме
             </textarea>
             </label>
