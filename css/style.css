@@ -6,10 +6,12 @@
   --element-dark-grey: #231F20;
   --text-header-grey: #666666;
   --dark-grey: #4D4D4D;
+  --grey-active-page: #959595;
   --another-grey: #DBDBDB;
   --grey-hover: #DFDFDF;
   --one-more-grey: #D5D5D5;
   --pale-grey: #444444;
+  --grey-triangles: #A6A6A6;
   --border-light-grey: #D7DCDE;
   --border-dark-grey: #B4B9BB;
   --light-grey-background: #EEEEEE;
@@ -20,6 +22,9 @@
   --red-medium: #E74246;
   --red-dark: #D7373B;
   --red-placeholder-invalid: #c0392b;
+  --button-active-opacity: rgba(255, 255, 255, 0.3);
+  --grey-button-active-opacity: rgba(0, 0, 0, 0.3);
+  --box-shadow-button-active: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
   --green-link: #00CA74;
   --green-hover: #00BC6C;
   --green-active: #00AA62;
@@ -29,7 +34,6 @@
 }
 
 .visually-hidden {
-  display: none;
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -68,6 +72,7 @@ img {
 }
 
 .main-navigation {
+  /* Здесь явно что-то не то... */
   font-size: 16px;
   font-weight: 500;
   line-height: 30px;
@@ -75,6 +80,20 @@ img {
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: transparent;
+  display: flex;
+  width: 859.84;
+  flex-direction: row;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0;
+  margin-top: 75px;
+  margin-right: 140.16px;
+  margin-bottom: 0px;
+  margin-left: 140px;
+
 }
 
 .sort-decrease {
@@ -95,15 +114,22 @@ img {
   display: block;
 }
 
-.site-navigation-item-active {
-  border-bottom: 2px solid red;
-  padding-bottom: 3px;
-  display: inline-block;
-  color: var(--basic-black);
-}
-
 .site-navigation {
   list-style: none;
+  display: flex;
+  width: 438px;
+  min-height: 75px;
+  flex-direction: row;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.site-navigation-item {
+  padding-bottom: 3px;
+  display: inline-block;
 }
 
 .site-navigation-item,
@@ -119,17 +145,35 @@ img {
 .site-navigation-item:active,
 .user-navigation:active {
   color: var(--basic-black);
-  mix-blend-mode: normal;
   opacity: 0.3;
 }
 
+.site-navigation-item-active,
+.site-navigation-item-active:active,
+.site-navigation-item-active:hover {
+  color: var(--basic-black);
+  border-bottom: 2px solid red;
+  opacity: 1;
+}
+
 .user-navigation {
-  background-color: var(--grey-header-background);
+  display: flex;
+  min-width: 200px;
+  flex-direction: row;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  justify-content: end;
+  align-items: center;
 }
 
 .header-zone,
 .slider {
   background-color: var(--light-grey-background);
+}
+
+.header-zone {
+  margin-bottom: 9px;
 }
 
 .slide-title {
@@ -146,6 +190,20 @@ img {
   margin: 0;
 }
 
+.slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  align-items: center;
+}
+
+.slide-image {
+  margin: 0;
+  margin-right: 143px;
+  width: 760px;
+  height: 431px;
+}
+
 .button {
   color: var(--basic-white);
   background-color: var(--red-light);
@@ -153,6 +211,14 @@ img {
   text-align: center;
   text-transform: uppercase;
   display: inline-block;
+  border: none;
+  box-shadow: none;
+  width: 200px;
+  height: 50px;
+  margin-top: 32px;
+  margin-right: 80px;
+  margin-bottom: 44px;
+  margin-left: 0px;
 }
 
 .button:hover {
@@ -160,15 +226,19 @@ img {
 }
 
 .button:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--button-active-opacity);
   background-color: var(--red-dark);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: var(--box-shadow-button-active);
   border-radius: 3px;
 }
 
 .slide-button {
   width: 240px;
   height: 50px;
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slider-white-buttons {
@@ -176,7 +246,22 @@ img {
 }
 
 .product-types {
+  /* Три колонки разнесло на две строки, а желеная прижимается к правому краю вместо того чтобы стоять в центре( Обнуляла им всем марджины — это не помогает( */
   list-style: none;
+  margin: 0;
+  margin-right: 140px;
+  margin-left: 140px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 100px;
+}
+
+.product-type {
+  display: block;
+  width: 300px;
+  border: 0;
+  margin: 0;
 }
 
 .product-types-titles {
@@ -185,10 +270,30 @@ img {
   line-height: 30px;
   text-transform: uppercase;
   color: var(--basic-black);
+  margin-top: 25px;
+}
+
+.product-types-text {
+  margin-top: 16px;
+}
+
+.button.product-type-red-button {
+  width: 160px;
+  height: 50px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-green {
   background-color: var(--green-link);
+  width: 160px;
+  height: 50px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-green:hover {
@@ -196,14 +301,20 @@ img {
 }
 
 .button-green:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--button-active-opacity);
   background-color: var(--green-active);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: var(--box-shadow-button-active);
   border-radius: 3px;
 }
 
 .button-yellow {
   background-color: var(--yellow-link);
+  width: 160px;
+  height: 50px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-yellow:hover {
@@ -211,53 +322,86 @@ img {
 }
 
 .button-yellow:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--button-active-opacity);
   background-color: var(--yellow-active);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: var(--box-shadow-button-active);
   border-radius: 3px;
 }
 
-.studio-credo {
+.about-title {
   font-weight: 500;
   font-size: 45px;
   line-height: 45px;
   color: var(--basic-black);
+  margin: 0;
+  margin-bottom: 32px;
 }
 
-.studio-gives {
+.about-subtitle {
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
 }
 
-.studio-gives.studio-gives-black {
+.about-subtitle.about-subtitle-black {
   color: var(--basic-black);
 }
 
-.work-types {
-  list-style: none;
+.about-subtitle-black {
+  margin: 0;
+  padding: 0;
 }
 
-.work-bonuses {
+.about-list {
   list-style: none;
+  /* Как здесь предпочтительнее задать расстояние между пунктами списка? */
 }
 
-.guarantee-numbers {
+.about {
+  display: block;
+  width: 651px;
+}
+
+.about-text {
+  width: 646px;
+  margin-bottom: 40px;
+}
+
+.about-subtitle {
+  margin-bottom: 23px;
+}
+
+.info-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+}
+
+.info-list-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.info-list-numbers {
   font-weight: bold;
   font-size: 45px;
   line-height: 64px;
   color: var(--basic-black);
+  margin: 0;
 }
 
-.guarantee-sup {
+.info-table-sup {
   font-weight: bold;
   font-size: 26px;
   line-height: 40px;
   color: var(--basic-black);
 }
 
-.guarantee-words {
+.info-list-text {
   line-height: 18px;
 }
 
@@ -284,6 +428,11 @@ img {
   align-items: center;
   text-transform: uppercase;
   color: var(--basic-black);
+  margin-top: 49px;
+  /* Видимо, я как-то неправильно задаю отступ сверху, т.к. он не появляется. */
+  margin-right: 76px;
+  margin-bottom: 22.71px;
+  margin-left: 50px;
 }
 
 .address-block {
@@ -291,6 +440,18 @@ img {
   line-height: 18px;
   align-items: center;
   color: var(--text-header-grey);
+  margin-top: 22.71px;
+  margin-right: 39px;
+  margin-bottom: 15px;
+  /* А есть ли тут способ точно отсчитать здесь отступ до тел. номера? */
+  margin-left: 50px;
+}
+
+.phone-number {
+  margin-top: 0px;
+  margin-right: 39px;
+  margin-bottom: 37.29px;
+  margin-left: 50px;
 }
 
 .write-us {
@@ -305,6 +466,7 @@ img {
   font-size: 16px;
   line-height: 18px;
   color: var(--pale-grey);
+  opacity: 0.5;
   background-color: var(--basic-white);
   border: 2px solid var(--border-light-grey);
 }
@@ -315,9 +477,11 @@ img {
 
 .input:focus {
   color: var(--pale-grey);
+  opacity: 1;
   border-color: 2px solid var(--basic-black);
 }
 
+/*
 .input:invalid {
   color: var(--red-placeholder-invalid);
   border-color: 2px solid var(--red-medium);
@@ -326,7 +490,7 @@ img {
 .input:invalid::placeholder {
   color: var(--red-medium);
 }
-
+*/
 
 
 .social-icons {
@@ -334,20 +498,26 @@ img {
 }
 
 .social-item {
-  color: var(--basic-white);
   background-color: var(--light-grey-socialmedia);
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-item:hover {
-  color: var(--basic-white);
-  color: var(--red-medium);
+  background-color: var(--red-medium);
+}
+
+.social-item:active {
+  background-color: var(--red-dark);
+  box-shadow: var(--box-shadow-button-active);
 }
 
 .social-item:active img {
   opacity: 0.3;
-  color: var(--basic-white);
-  color: var(--red-dark);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 
 }
 
@@ -366,14 +536,12 @@ img {
   color: var(--pale-grey);
 }
 
-
-
-/* Отсюда — Catalog*/
-
 .header-zone,
 .heading-catalog {
   background-color: var(--light-grey-background);
   margin: 0;
+  margin-right: 140px;
+  margin-left: 140px;
 }
 
 .heading-catalog {
@@ -388,7 +556,7 @@ img {
   list-style: none;
 }
 
-.categorize a {
+.categorize-link {
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
@@ -396,24 +564,29 @@ img {
   opacity: 0.3;
 }
 
-.categorize-current {
-  color: var(--basic-black);
-}
-
-.categorize a:hover {
+.categorize-link:hover {
   color: var(--basic-black);
   opacity: 0.6;
 }
 
-.categorize a:active {
+.categorize-link:active {
   color: var(--basic-black);
+  opacity: 1;
+}
+
+.categorize-link-current,
+.categorize-link-current:hover,
+.categorize-link-current:active {
+  color: var(--basic-black);
+  opacity: 1;
 }
 
 .sort-triangles {
   list-style: none;
 }
 
-.filter ul {
+.radio-icon,
+.checkbox-icon {
   list-style: none;
   font-size: 16px;
   line-height: 19px;
@@ -469,6 +642,9 @@ img {
   line-height: 18px;
   color: var(--basic-black);
   background-color: var(--light-grey-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-grey:hover {
@@ -476,14 +652,19 @@ img {
 }
 
 .button-grey:active {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--grey-button-active-opacity);
   background-color: var(--one-more-grey);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: var(--box-shadow-button-active);
   border-radius: 3px;
 }
 
 .catalog-items {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 55px;
 }
 
 .catalog-item {
@@ -494,21 +675,29 @@ img {
   font-size: 16px;
   line-height: 18px;
   color: var(--text-header-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.catalog-item-header:link {
-  background-color: var(--dark-grey);
+.catalog-item-header {
+  color: var(--dark-grey);
   opacity: 0.12;
   margin: 0;
+  display: block;
 }
 
 .catalog-item-header:hover {
-  background-color: var(--dark-grey);
+  color: var(--dark-grey);
+  opacity: 1;
   margin: 0;
 }
 
 .catalog-item-image {
   margin: 0;
+  display: block;
+  width: 358px;
+  height: 578px;
 }
 
 .catalog-item-name:hover {
@@ -541,11 +730,15 @@ img {
 }
 
 .pagination-item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-black);
-  background-color: var(--light-grey-background) border: none;
+  background-color: var(--light-grey-background);
+  border: none;
 }
 
 .pagination-item:hover {
@@ -553,12 +746,287 @@ img {
 }
 
 .pagination-item:active {
-
-  opacity: 0.3;
+  color: var(--grey-active-page);
   background-color: var(--one-more-grey);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: var(--box-shadow-button-active);
 }
 
-.pagination-item-current {
-  background-color: var(--one-more-grey);
+.pagination-item-current,
+.pagination-item-current:hover,
+.pagination-item-current:active {
+  background-color: var(--basic-white);
+  box-shadow: none;
+  border: 3px solid var(--another-grey);
+}
+
+.sortation {
+  list-style-type: none;
+  margin: 0;
+}
+
+.sort-increase {
+  color: var(--grey-triangles);
+  opacity: 0.2;
+}
+
+.sort-increase:hover {
+  color: var(--grey-triangles);
+  opacity: 1;
+}
+
+/* Не получается задать треугольнику sort-decrease черный цвет в активном состоянии( никак не пойму, в чем дело. */
+.sori-increase:active,
+.sort-decrease,
+.sort-decrease:hover,
+.sort-decrease:active {
+  color: var(--element-dark-grey);
+  opacity: 1;
+}
+
+.page {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.logo-header {
+  width: 160px;
+  height: 66px;
+}
+
+.user-navigation {
+  width: 75px;
+  height: 30px;
+  padding-left: 50px;
+}
+
+.slider {
+  width: auto;
+  margin: 0;
+  margin-right: 140px;
+  margin-left: 140px;
+}
+
+.slide-info {
+  display: block;
+  width: 397px;
+  padding: 0;
+  border: 0;
+  margin-bottom: 80px;
+  margin-left: 140px;
+}
+
+.slide-text {
+  margin-top: 25px;
+}
+
+.slider-white-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  justify-content: center;
+  /* align-items: Тут не знаю, какое значение задавать (или не только тут?): кружки встают вроде не по центру и не совсем внизу, хотя ближе к низу. */
+}
+
+.about-and-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 140px;
+  margin-left: 140px;
+  margin-bottom: 2px;
+  align-items: center;
+}
+
+.about-info {
+  width: 360px;
+  height: 486px;
+}
+
+
+.nerds-colored-logo {
+  width: 360px;
+  height: 208px;
+  margin: 0;
+  margin-bottom: 37px;
+}
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  height: 180px;
+  margin-right: 140px;
+  margin-left: 140px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.decorative-line {
+  margin-right: 140px;
+  margin-left: 140px;
+}
+
+.contacts {
+  display: block;
+  width: 319px;
+  margin-left: 140px;
+  padding: 0;
+}
+
+.feedback-button {
+  width: 219px;
+  height: 50px;
+  margin-top: 0;
+  margin-right: 50px;
+  margin-bottom: 47px;
+  margin-left: 50px;
+}
+
+.write-us-popup { /* Я не придумала, как разместить слова "Ваше имя:", "Ваш email:" и "Текст письма" над инпутами, как в макете. И не получилось поставить плейсхолдер "В свободной форме" слева в поле ввода. */
+  width: 960px;
+}
+
+.write-us-item {
+  margin: 0;
+  margin-bottom: 34px;
+}
+
+.write-us-item-message {
+  margin-bottom: 47px;
+}
+
+.write-us-item input {
+  width: 360px;
+}
+
+.write-us-item-message textarea {
+  width: 760px;
+}
+
+.appointment-button {
+  width: 259px;
+  height: 50px;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 84px;
+}
+
+.page-footer {
+  padding: 68px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.footer-item-first {
+  width: 388px;
+  margin: 0;
+}
+
+.footer-item-second {
+  width: 660px;
+}
+
+.footer-item-second p {
+  margin: 0;
+}
+
+.social-icons { /*Не могу придумать, как выровнять здесь список соцсетей так, чтобы отступ от самой левой был 140px до левого края поля. Точнее понимаю, что на самом деле этот флексбокс хорошо бы выровнять по левому краю, а эти 140px должны быт глобальным полем слева на всей странице, да? Но я так и не смогла его всей странице задать... */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-title {
+  display: none;
+}
+
+.popup-header {
+  font-size: 45px;
+  line-height: 53px;
+  font-weight: bold;
+  color: var(--basic-black);
+  margin: 0;
+  margin-bottom: 37px;
+}
+
+.page-catalog-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-content: start;
+}
+
+.heading-catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 108px;
+}
+
+.filters {
+  width: 260px;
+}
+
+.catalog {
+  margin-left: 140px; /* Кажется, когда я задала этот марджин, каталог сдвинулся сильнее, чем надо, притом что паддинг я обнулила. Как здесь добиться отступа в 140px? */
+  padding: 0;
+}
+
+.catalog-item-card { /*Кажется, я пока не знаю, как положить сверху на карточки макетов накладные плашки с целой и описанием! Поэтому они съехали с этих карточек вниз. */
+  width: 360px;
+  min-height: 620px;
+  margin-right: 41px;
+  margin-bottom: 31px;
+}
+
+.catalog-item {
+  display: block;
+  width: 360px;
+  min-height: 231px;
+}
+
+.catalog-item-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog-item-button { /* Не пойму, как выровнять кнопки, шоб встали по центру плашки. Задаю им левый марджин - не помогает. */
+  margin-left: 80px;
+}
+
+.filter fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px; /* Похоже, марджины не подключаются. */
+}
+
+.filter fieldset:first-child {
+  margin-bottom: 16px; /* Эти тоже не подключются, кажется. */
+}
+
+.filter page-subtitle-filters {
+  margin-bottom: 16px; /* Здесь тоже. */
+}
+
+.filter page-subtitle-filters-first {
+  margin-bottom: 48px; /* И тут. */
+}
+
+.filter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 19px;
 }
