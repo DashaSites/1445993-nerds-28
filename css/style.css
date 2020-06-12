@@ -72,28 +72,17 @@ img {
 }
 
 .main-navigation {
-  /* Здесь явно что-то не то... */
   font-size: 16px;
   font-weight: 500;
   line-height: 30px;
-  align-items: center;
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: transparent;
   display: flex;
-  width: 859.84;
-  flex-direction: row;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding: 0;
-  margin-top: 75px;
-  margin-right: 140.16px;
-  margin-bottom: 0px;
-  margin-left: 140px;
-
+  margin: 0;
 }
 
 .sort-decrease {
@@ -118,18 +107,20 @@ img {
   list-style: none;
   display: flex;
   width: 438px;
-  min-height: 75px;
-  flex-direction: row;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
-  justify-content: space-around;
-  align-items: stretch;
+
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
 }
 
 .site-navigation-item {
-  padding-bottom: 3px;
-  display: inline-block;
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin: 0 44px;
 }
 
 .site-navigation-item,
@@ -152,28 +143,27 @@ img {
 .site-navigation-item-active:active,
 .site-navigation-item-active:hover {
   color: var(--basic-black);
-  border-bottom: 2px solid red;
   opacity: 1;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .user-navigation {
   display: flex;
-  min-width: 200px;
-  flex-direction: row;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
+  width: 75px;
+  height: 30px;
   justify-content: end;
   align-items: center;
+  outline: 5px solid rgba(255, 0, 255, 0.3);
+  outline-offset: -5px;
+  margin: 0;
+  padding: 0;
 }
 
-.header-zone,
+.main-header,
 .slider {
   background-color: var(--light-grey-background);
-}
-
-.header-zone {
-  margin-bottom: 9px;
 }
 
 .slide-title {
@@ -188,6 +178,7 @@ img {
 .slides {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .slide {
@@ -218,7 +209,7 @@ img {
   margin-top: 32px;
   margin-right: 80px;
   margin-bottom: 44px;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .button:hover {
@@ -536,12 +527,9 @@ img {
   color: var(--pale-grey);
 }
 
-.header-zone,
 .heading-catalog {
   background-color: var(--light-grey-background);
   margin: 0;
-  margin-right: 140px;
-  margin-left: 140px;
 }
 
 .heading-catalog {
@@ -799,17 +787,13 @@ img {
   height: 66px;
 }
 
-.user-navigation {
-  width: 75px;
-  height: 30px;
-  padding-left: 50px;
-}
-
 .slider {
   width: auto;
   margin: 0;
-  margin-right: 140px;
-  margin-left: 140px;
+  padding: 0;
+
+  outline: 5px solid rgba(0, 255, 0, 0.3);
+  outline-offset: -5px;
 }
 
 .slide-info {
@@ -827,8 +811,7 @@ img {
 
 .slider-white-buttons {
   display: flex;
-  flex-direction: row;
-  flex-basis: auto;
+
   justify-content: center;
   /* align-items: Тут не знаю, какое значение задавать (или не только тут?): кружки встают вроде не по центру и не совсем внизу, хотя ближе к низу. */
 }
@@ -922,7 +905,7 @@ img {
 
 .footer-container {
   display: flex;
-  flex-direction: row;
+
   justify-content: start;
   align-items: center;
 }
@@ -942,7 +925,6 @@ img {
 
 .social-icons { /*Не могу придумать, как выровнять здесь список соцсетей так, чтобы отступ от самой левой был 140px до левого края поля. Точнее понимаю, что на самом деле этот флексбокс хорошо бы выровнять по левому краю, а эти 140px должны быт глобальным полем слева на всей странице, да? Но я так и не смогла его всей странице задать... */
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -1029,4 +1011,19 @@ img {
   padding: 0;
   margin: 0;
   line-height: 19px;
+}
+
+.main-header {
+  margin: 0;
+  padding: 0;
+
+
+  outline: 5px solid rgba(0, 255, 0, 0.3);
+  outline-offset: -5px;
+}
+
+.container {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
