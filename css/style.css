@@ -81,8 +81,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .sort-decrease {
@@ -107,20 +107,16 @@ img {
   list-style: none;
   display: flex;
   width: 438px;
-
   align-items: center;
   margin: 0;
   padding: 0;
-
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .site-navigation-item {
   display: block;
   margin: 0;
   padding: 0;
-  margin: 0 44px;
+  margin: 0 22px;
 }
 
 .site-navigation-item,
@@ -151,12 +147,7 @@ img {
 
 .user-navigation {
   display: flex;
-  width: 75px;
-  height: 30px;
-  justify-content: end;
   align-items: center;
-  outline: 5px solid rgba(255, 0, 255, 0.3);
-  outline-offset: -5px;
   margin: 0;
   padding: 0;
 }
@@ -173,6 +164,7 @@ img {
   line-height: 55px;
   align-items: center;
   margin: 0;
+  padding: 0;
 }
 
 .slides {
@@ -182,17 +174,13 @@ img {
 }
 
 .slide {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0;
-  align-items: center;
+  display: none;
+  position: relative;
+  min-height: 430px;
 }
 
-.slide-image {
-  margin: 0;
-  margin-right: 143px;
-  width: 760px;
-  height: 431px;
+.slide-active {
+  display: grid;
 }
 
 .button {
@@ -226,33 +214,33 @@ img {
 .slide-button {
   width: 240px;
   height: 50px;
-  margin-top: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .slider-white-buttons {
+  display: flex;
+  justify-content: center;
   color: var(--basic-white);
 }
 
-.product-types {
-  /* Три колонки разнесло на две строки, а желеная прижимается к правому краю вместо того чтобы стоять в центре( Обнуляла им всем марджины — это не помогает( */
+.container.product-types {
   list-style: none;
-  margin: 0;
-  margin-right: 140px;
-  margin-left: 140px;
-  padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 300px 300px 300px;
   column-gap: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
 }
 
-.product-type {
+.product-type-image {
   display: block;
   width: 300px;
   border: 0;
   margin: 0;
+  margin-bottom: 25px;
 }
 
 .product-types-titles {
@@ -261,30 +249,36 @@ img {
   line-height: 30px;
   text-transform: uppercase;
   color: var(--basic-black);
-  margin-top: 25px;
+  margin: 0;
+  margin-bottom: 16px;
+
 }
 
 .product-types-text {
-  margin-top: 16px;
+  width: 260px;
+  margin: 0;
+  margin-bottom: 32px;
 }
 
-.button.product-type-red-button {
+.product-type-red-button {
   width: 160px;
   height: 50px;
-  margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .button-green {
   background-color: var(--green-link);
   width: 160px;
   height: 50px;
-  margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .button-green:hover {
@@ -302,10 +296,11 @@ img {
   background-color: var(--yellow-link);
   width: 160px;
   height: 50px;
-  margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .button-yellow:hover {
@@ -333,15 +328,15 @@ img {
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
-}
-
-.about-subtitle.about-subtitle-black {
-  color: var(--basic-black);
+  margin: 0;
+  margin-bottom: 23px;
 }
 
 .about-subtitle-black {
-  margin: 0;
+  color: var(--basic-black);
   padding: 0;
+  margin: 0;
+  margin-bottom: 31px;
 }
 
 .about-list {
@@ -352,15 +347,14 @@ img {
 .about {
   display: block;
   width: 651px;
+  padding-top: 73px;
+  padding-bottom: 73px;
 }
 
 .about-text {
   width: 646px;
+  margin: 0;
   margin-bottom: 40px;
-}
-
-.about-subtitle {
-  margin-bottom: 23px;
 }
 
 .info-list {
@@ -382,7 +376,9 @@ img {
   font-size: 45px;
   line-height: 64px;
   color: var(--basic-black);
+  padding: 0;
   margin: 0;
+  margin-bottom: 11px;
 }
 
 .info-table-sup {
@@ -390,18 +386,19 @@ img {
   font-size: 26px;
   line-height: 40px;
   color: var(--basic-black);
+  padding: 0;
+  margin: 0;
 }
 
 .info-list-text {
   line-height: 18px;
-}
-
-.partner-logos {
-  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .partner-logo {
   opacity: 0.2;
+  display: block;
 }
 
 .partner-logo:hover {
@@ -419,11 +416,10 @@ img {
   align-items: center;
   text-transform: uppercase;
   color: var(--basic-black);
-  margin-top: 49px;
-  /* Видимо, я как-то неправильно задаю отступ сверху, т.к. он не появляется. */
-  margin-right: 76px;
-  margin-bottom: 22.71px;
-  margin-left: 50px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 23px;
+
 }
 
 .address-block {
@@ -431,18 +427,15 @@ img {
   line-height: 18px;
   align-items: center;
   color: var(--text-header-grey);
-  margin-top: 22.71px;
-  margin-right: 39px;
-  margin-bottom: 15px;
-  /* А есть ли тут способ точно отсчитать здесь отступ до тел. номера? */
-  margin-left: 50px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 23px;
 }
 
 .phone-number {
-  margin-top: 0px;
-  margin-right: 39px;
-  margin-bottom: 37.29px;
-  margin-left: 50px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 37px;
 }
 
 .write-us {
@@ -486,6 +479,8 @@ img {
 
 .social-icons {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .social-item {
@@ -496,6 +491,10 @@ img {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-right: 9px;
+
 }
 
 .social-item:hover {
@@ -518,6 +517,9 @@ img {
   line-height: 36px;
   align-items: center;
   color: var(--basic-black);
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
 }
 
 .social-text {
@@ -525,6 +527,8 @@ img {
   line-height: 22px;
   align-items: center;
   color: var(--pale-grey);
+  margin: 0;
+  padding: 0;
 }
 
 .heading-catalog {
@@ -798,38 +802,37 @@ img {
 
 .slide-info {
   display: block;
-  width: 397px;
-  padding: 0;
+  width: 400px;
   border: 0;
-  margin-bottom: 80px;
-  margin-left: 140px;
+  padding: 0;
+  padding-top: 78px;
+  margin: 0;
+  padding-bottom: 80px;
+}
+
+.slide-image {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .slide-text {
   margin-top: 25px;
-}
-
-.slider-white-buttons {
-  display: flex;
-
-  justify-content: center;
-  /* align-items: Тут не знаю, какое значение задавать (или не только тут?): кружки встают вроде не по центру и не совсем внизу, хотя ближе к низу. */
+  margin-bottom: 38px;
+  padding: 0;
 }
 
 .about-and-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-right: 140px;
-  margin-left: 140px;
-  margin-bottom: 2px;
-  align-items: center;
+  column-gap: 149px;
 }
 
 .about-info {
   width: 360px;
-  height: 486px;
+  padding-top: 41px;
+  padding-bottom: 74px;
 }
-
 
 .nerds-colored-logo {
   width: 360px;
@@ -838,36 +841,40 @@ img {
   margin-bottom: 37px;
 }
 
-.partner-logos {
+.partner-logos.container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
-  height: 180px;
-  margin-right: 140px;
-  margin-left: 140px;
-  padding-right: 50px;
-  padding-left: 50px;
+  list-style: none;
+  border-top: 2px solid var(--light-grey-background);
+  padding-top: 46px;
+  border-bottom: 2px solid var(--light-grey-background);
+  padding-bottom: 44px;
 }
 
-.decorative-line {
-  margin-right: 140px;
-  margin-left: 140px;
+.map-and-marker {
+  padding-top: 80px;
+  background: lightblue;
 }
 
 .contacts {
   display: block;
   width: 319px;
-  margin-left: 140px;
+  margin: 0;
   padding: 0;
+  padding-top: 49px;
+  padding-bottom: 47px;
+  padding-left: 50px;
 }
 
 .feedback-button {
   width: 219px;
   height: 50px;
-  margin-top: 0;
-  margin-right: 50px;
-  margin-bottom: 47px;
-  margin-left: 50px;
+  margin: 0;
+  padding-top: 17px;
+  padding-bottom: 15px;
+  padding-right: 44px;
+  padding-left: 44px;
 }
 
 .write-us-popup { /* Я не придумала, как разместить слова "Ваше имя:", "Ваш email:" и "Текст письма" над инпутами, как в макете. И не получилось поставить плейсхолдер "В свободной форме" слева в поле ввода. */
@@ -905,25 +912,25 @@ img {
 
 .footer-container {
   display: flex;
-
   justify-content: start;
   align-items: center;
 }
 
 .footer-item-first {
-  width: 388px;
   margin: 0;
+  padding: 0;
 }
 
 .footer-item-second {
-  width: 660px;
+  margin: 0;
+  margin-left: 130px;
 }
 
 .footer-item-second p {
   margin: 0;
 }
 
-.social-icons { /*Не могу придумать, как выровнять здесь список соцсетей так, чтобы отступ от самой левой был 140px до левого края поля. Точнее понимаю, что на самом деле этот флексбокс хорошо бы выровнять по левому краю, а эти 140px должны быт глобальным полем слева на всей странице, да? Но я так и не смогла его всей странице задать... */
+.social-icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1016,14 +1023,18 @@ img {
 .main-header {
   margin: 0;
   padding: 0;
-
-
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
+  padding-top: 49px;
+  padding-bottom: 9px;
 }
 
 .container {
   width: 1160px;
   margin: 0 auto;
   padding: 0 10px;
+
+  border: 1px solid lightcoral;
+}
+
+.partner-logo-html {
+  margin-left: 32px;
 }
