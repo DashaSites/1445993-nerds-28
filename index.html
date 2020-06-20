@@ -23,9 +23,9 @@
         <li><a href="blank.html" class="site-navigation-item">Контакты</a></li>
       </ul>
       <div class="user-navigation">
-        <a href="blank.html" class="user-navigation user-navigation-active">
-          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" style="margin-right: 26px;">Корзина
-        </a>
+        <a href="blank.html" class="user-navigation-item user-navigation-active">
+          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" style="margin-right: 26px;">
+          Корзина</a>
       </div>
     </nav>
   </header>
@@ -97,7 +97,8 @@
       </li>
 
       <li class="product-type">
-        <img src="img/presentations-optimized.jpg" width="300" height="146" alt="Презентации" class="product-type-image">
+        <img src="img/presentations-optimized.jpg" width="300" height="146" alt="Презентации"
+          class="product-type-image">
         <h3 class="product-types-titles">Презентации</h3>
         <p class="product-types-text">Вы даже не подозреваете, насколько вы изумительны!</p>
         <a href="blank.html" class="button button-yellow">Заказать</a>
@@ -114,14 +115,11 @@
         <p class="about-subtitle">Выполняем заказы на разработку:</p>
 
         <ul class="about-list">
-          <!-- Сверстаю полоску на CSS-->
-          <li>Веб-сайтов любой сложности</li>
+          <li class="about-list-item">Веб-сайтов любой сложности</li>
 
-          <!-- Сверстаю полоску на CSS-->
-          <li>Мобильных приложений для iOS и Android</li>
+          <li class="about-list-item">Мобильных приложений для iOS и Android</li>
 
-          <!-- Сверстаю полоску на CSS-->
-          <li>Слайдшоу и видео для корпоративных презентаций</li>
+          <li class="about-list-item">Слайдшоу и видео для корпоративных презентаций</li>
         </ul>
       </section>
 
@@ -162,7 +160,8 @@
       </li>
 
       <li>
-        <a href="blank.html" aria-label="Переход на сайт барбершопа Borodinski" class="partner-logo partner-logo-borodinski">
+        <a href="blank.html" aria-label="Переход на сайт барбершопа Borodinski"
+          class="partner-logo partner-logo-borodinski">
           <img src="img/logo-borodinski-index.png" width="209" height="90" alt="Логотип барбершопа Borodinski">
         </a>
       </li>
@@ -185,12 +184,12 @@
       <img src="img/map-with-marker.png" width="1440px" height="416px" alt="Карта">
 
       <div class="container">
-      <article class="contacts">
-        <p class="page-subtitle">Nёrds Design Studio</p>
-        <p class="address-block">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-        <p class="phone-number">тел. +7 (812) 275-75-75</p>
-        <button type="button" class="button feedback-button">Напишите нам</button>
-      </article>
+        <article class="contacts">
+          <p class="page-subtitle">Nёrds Design Studio</p>
+          <p class="address-block">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <p class="phone-number">тел. +7 (812) 275-75-75</p>
+          <button type="button" class="button feedback-button">Напишите нам</button>
+        </article>
       </div>
     </div>
 
@@ -200,30 +199,32 @@
     <fieldset class="contact-form">
       <legend class="popup-title">Напишите нам</legend>
       <h2 class="popup-header">Напишите нам</h2>
+      <div>
+        <img src="img/close-cross.png" width="21" height="21" alt="Закрыть форму" class="closing-cross">
+      </div>
+
       <div class="two-inputs-in-row">
-      <p class="write-us-item">
-        <label>
+
+        <label class="write-us-item">
           <span class="input-label">Ваше имя</span>
-          <input type="text" name="name" placeholder="  Имя Фамилия" required class="input input-halfcolumn">
-        </label>
-      </p>
-
-      <p class="write-us-item">
-        <label>
-          <span class="input-label input-label-halfcolumn">Ваш email</span>
-          <input type="text" name="email" placeholder="  email@example.com" required class="input input-halfcolumn">
-        </label>
-      </p>
-    </div>
-
-      <p class="write-us-item">
-        <label>
-          <span class="input-label">Текст письма</span>
-          <textarea name="message" rows="4" required class="input input-fullcolumn" placeholder="  В свободной форме"></textarea>
+          <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column">
         </label>
 
-        </textarea>
-      </p>
+        <label class="write-us-item">
+          <span class="input-label input-label-half-column">Ваш email</span>
+          <input type="text" name="email" placeholder="email@example.com" required class="input input-half-column">
+        </label>
+
+      </div>
+
+      <label class="write-us-item">
+        <span class="input-label">Текст письма</span>
+        <textarea name="message" rows="4" required class="input input-full-column"
+          placeholder="  В свободной форме"></textarea>
+      </label>
+
+      </textarea>
+
 
       <button type="submit" class="button appointment-button">Отправить</button>
     </fieldset>
@@ -233,27 +234,27 @@
 
     <div class="container footer-container">
 
-        <ul class="social-icons footer-item-first">
+      <ul class="social-icons footer-item-first">
 
-          <li>
-            <a href="" title="Мы в соцсети: Вконтакте" class="social-item">
-              <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
-            </a>
-          </li>
+        <li>
+          <a href="" aria-label="Вконтакте" class="social-item">
+            <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
+          </a>
+        </li>
 
-          <li>
-            <a href="" title="Мы в соцсети: Фейсбук" class="social-item">
-              <img src="img/fb-icon.svg" width="12" height="22" alt="Фейсбук">
-            </a>
-          </li>
+        <li>
+          <a href="" aria-label="Фейсбук" class="social-item">
+            <img src="img/fb-icon.svg" width="12" height="22" alt="Фейсбук">
+          </a>
+        </li>
 
-          <li>
-            <a href="" title="Мы в соцсети: Инстаграм" class="social-item">
-              <img src="img/insta-icon.svg" width="21" height="21" alt="Инстаграм">
-            </a>
-          </li>
+        <li>
+          <a href="" aria-label="Инстаграм" class="social-item">
+            <img src="img/insta-icon.svg" width="21" height="21" alt="Инстаграм">
+          </a>
+        </li>
 
-        </ul>
+      </ul>
 
       <div class="footer-item-second">
         <h2 class="social-heading">Давайте дружить, это выгодно!</h2>

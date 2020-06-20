@@ -19,13 +19,13 @@
       <ul class="site-navigation">
         <li><a href="blank.html" class="site-navigation-item">Студия</a></li>
         <li><a href="blank.html" class="site-navigation-item">Клиенты</a></li>
-        <li><a href="" class="site-navigation-item site-navigation-item-active">Магазин</a></li>
+        <li><a class="site-navigation-item site-navigation-item-active">Магазин</a></li>
         <li><a href="blank.html" class="site-navigation-item">Контакты</a></li>
       </ul>
       <div class="user-navigation">
-        <a href="blank.html" class="user-navigation user-navigation-active">
-          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" style="margin-right: 26px;">Корзина
-        </a>
+        <a href="blank.html" class="user-navigation-item user-navigation-active">
+          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" style="margin-right: 26px;">
+          Корзина</a>
       </div>
     </nav>
   </header>
@@ -43,53 +43,59 @@
 
         <form class="filter" action="https://echo.htmlacademy.ru" method="get">
 
-          <fieldset class="fieldset-range">
+          <fieldset class="filter-item">
+            <legend>Стоимость</legend>
 
-            <legend class="page-subtitle-filters-first">Стоимость:</legend>
+            <div class="range-filter">
 
-            <div class="price-range-block">
-              <label for="price-range" class="visually-hidden">Стоимость</label>
-              <input id="price-range" type="range" min="1" max="15 000" step="1" class="price-range">
-            </div>
-            <div class="range-boxes">
-              <div>
-                <label for="from-amount" class="word-from">От
-                  <input id="from-amount" type="text" name="from" placeholder="0" class="number-from">
-                </label>
+              <div class="range-coltrons">
+                <div class="scale">
+                  <div class="bar" style="
+                    width: 40%;
+                    margin-left: 10%
+                    "></div>
+                </div>
+                <div class="toggle toggle-min" tabindex="0" style="
+                left: 10%
+                "></div>
+                <div class="toggle toggle-max" tabindex="0" style="
+                left: 50%
+                "></div>
               </div>
 
-              <div>
-                <label for="to-amount" class="word-to">До
-                  <input id="to-amount" type="text" name="to" placeholder="15 000" class="number-to">
+              <div class="price-controls">
+                <label class="min-price"> от <input type="number" name="min-price" value="0" step="100">
+                </label>
+
+                <label class="max-price"> до <input type="number" name="max-price" value="15 000">
                 </label>
               </div>
             </div>
-
           </fieldset>
 
-          <fieldset>
+          <fieldset class="fieldset filter-item-second">
             <legend class="page-subtitle page-subtitle-filters">Сетка:</legend>
             <ul class="radio">
 
-              <li>
+              <li class="filter-option filter-radio">
                 <label>
-                  <input type="radio" name="net-type" value="adaptive" checked>
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="adaptive" checked>
                   <span class="radio-icon radio-option"></span>
                   Адаптивная
                 </label>
               </li>
 
-              <li>
+              <li class="filter-option filter-radio">
                 <label>
-                  <input type="radio" name="net-type" value="fixed">
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="fixed">
                   <span class="radio-icon radio-option"></span>
                   Фиксированная
                 </label>
               </li>
 
-              <li class="radio-last">
+              <li class="radio-last filter-option filter-radio">
                 <label>
-                  <input type="radio" name="net-type" value="rubber">
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="rubber">
                   <span class="radio-icon radio-option"></span>
                   Резиновая
                 </label>
@@ -97,44 +103,44 @@
             </ul>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="fieldset">
             <legend class="page-subtitle page-subtitle-filters">Особенности:</legend>
             <ul class="checkbox">
-              <li>
+              <li class="filter-option filter-checkbox">
                 <label>
-                  <input type="checkbox" name="slider" checked>
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="slider" checked>
                   <span class="checkbox-icon checkbox-option"></span>
                   Слайдер
                 </label>
               </li>
 
-              <li>
+              <li class="filter-option filter-checkbox">
                 <label>
-                  <input type="checkbox" name="advantages-block">
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="advantages-block">
                   <span class="checkbox-icon checkbox-option"></span>
                   Блок преимуществ
                 </label>
               </li>
 
-              <li>
+              <li class="filter-option filter-checkbox">
                 <label>
-                  <input type="checkbox" name="news" checked>
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="news" checked>
                   <span class="checkbox-icon checkbox-option"></span>
                   Новости
                 </label>
               </li>
 
-              <li>
+              <li class="filter-option filter-checkbox">
                 <label>
-                  <input type="checkbox" name="gallery">
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="gallery">
                   <span class="checkbox-icon checkbox-option"></span>
                   Галерея
                 </label>
               </li>
 
-              <li class="checkbox-last">
+              <li class="checkbox-last filter-option filter-checkbox">
                 <label>
-                  <input type="checkbox" name="cart">
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="cart">
                   <span class="checkbox-icon checkbox-option"></span>
                   Корзина
                 </label>
@@ -152,24 +158,21 @@
         <h3 class="visually-hidden">Список макетов</h3>
 
         <div class="sort-panel">
-          <div class="sort-panel-left-column">
             <h5 class="page-subtitle sort-subtitle">Сортировать:</h5>
-          </div>
 
-          <div>
-            <nav class="sort-panel-right-column">
-              <ul class="categorize">
-                <li><a class="categorize-link categorize-link-current">По цене</a></li>
-                <li><a class="categorize-link" href="blank.html">По типу</a></li>
-                <li><a class="categorize-link" href="blank.html">По названию</a></li>
-              </ul>
+          <nav class="sort-panel-right-column">
+            <ul class="categorize">
+              <li><a class="categorize-link categorize-link-current">По цене</a></li>
+              <li><a class="categorize-link" href="blank.html">По типу</a></li>
+              <li><a class="categorize-link" href="blank.html">По названию</a></li>
+            </ul>
 
-              <ul class="sortation">
-                <li><a title="Сортировка по убыванию" class="sort-decrease"></a></li>
-                <li><a href="blank.html" title="Сортировка по возрастанию" class="sort-increase"></a></li>
-              </ul>
-            </nav>
-          </div>
+            <ul class="sortation">
+              <li><a title="Сортировка по убыванию" class="sort-decrease"></a></li>
+              <li><a href="blank.html" title="Сортировка по возрастанию" class="sort-increase"></a></li>
+            </ul>
+          </nav>
+
         </div>
 
         <ul class="catalog-items">
@@ -179,7 +182,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">Sedona</h3>
               <p class="catalog-item-description">Информационный сайт для туристов</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
 
@@ -189,7 +192,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">Pink App</h3>
               <p class="catalog-item-description">Продуктовый лендинг приложения для iOS и Android</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
 
@@ -200,7 +203,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">Barbershop</h3>
               <p class="catalog-item-description">Сайт салона красоты. Для мужчин, да.</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
 
@@ -210,7 +213,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">Mishka</h3>
               <p class="catalog-item-description">Интернет-магазин вязаных игрушек</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
 
@@ -220,7 +223,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">A Plus</h3>
               <p class="catalog-item-description">Лендинг курсов повышения квалификации</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
 
@@ -230,7 +233,7 @@
             <div class="catalog-item">
               <h3 class="page-subtitle catalog-item-name">Кваст</h3>
               <p class="catalog-item-description">Промо-сайт производителя крафтового кваса</p>
-              <button type="button catalog-item-button" aria-label="Выбрать макет" class="button">9 900 ₽</button>
+              <button type="button" aria-label="Выбрать макет" class="button catalog-item-button">9 900 ₽</button>
             </div>
           </li>
         </ul>
@@ -263,18 +266,22 @@
     <fieldset class="contact-form">
       <legend class="popup-title">Напишите нам</legend>
       <h2 class="popup-header">Напишите нам</h2>
+      <div>
+        <img src="img/close-cross.png" width="21" height="21" alt="Закрыть форму" class="closing-cross">
+      </div>
+
       <div class="two-inputs-in-row">
         <p class="write-us-item">
           <label>
             <span class="input-label">Ваше имя</span>
-            <input type="text" name="name" placeholder="  Имя Фамилия" required class="input input-halfcolumn">
+            <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column">
           </label>
         </p>
 
         <p class="write-us-item">
           <label>
-            <span class="input-label input-label-halfcolumn">Ваш email</span>
-            <input type="text" name="email" placeholder="  email@example.com" required class="input input-halfcolumn">
+            <span class="input-label input-label-half-column">Ваш email</span>
+            <input type="text" name="email" placeholder="email@example.com" required class="input input-half-column">
           </label>
         </p>
       </div>
@@ -303,19 +310,19 @@
       <ul class="social-icons footer-item-first">
 
         <li>
-          <a href="" title="Мы в соцсети: Вконтакте" class="social-item">
+          <a href="" aria-label="Вконтакте" class="social-item">
             <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
           </a>
         </li>
 
         <li>
-          <a href="" title="Мы в соцсети: Фейсбук" class="social-item">
+          <a href="" aria-label="Фейсбук" class="social-item">
             <img src="img/fb-icon.svg" width="12" height="22" alt="Фейсбук">
           </a>
         </li>
 
         <li>
-          <a href="" title="Мы в соцсети: Инстаграм" class="social-item">
+          <a href="" aria-label="Инстаграм" class="social-item">
             <img src="img/insta-icon.svg" width="21" height="21" alt="Инстаграм">
           </a>
         </li>
