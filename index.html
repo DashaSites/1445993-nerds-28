@@ -14,7 +14,8 @@
   <header class="main-header">
     <nav class="main-navigation container">
       <a aria-label="Логотип Нердс" class="logo-header">
-        <img src="img/nerds-logo.svg" width="160" height="66" alt="Логотип дизайн-студии Нёрдс">
+        <img src="img/nerds-logo.svg" width="160" height="66" alt="Логотип дизайн-студии Нёрдс"
+          class="logo-header-image">
       </a>
       <ul class="site-navigation">
         <li><a href="blank.html" class="site-navigation-item">Студия</a></li>
@@ -24,7 +25,7 @@
       </ul>
       <div class="user-navigation">
         <a href="blank.html" class="user-navigation-item user-navigation-active">
-          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" style="margin-right: 26px;">
+          <img src="img/svg-nerds/cart-icon.svg" width="15" height="15" alt="" class="user-navigation-item-image">
           Корзина</a>
       </div>
     </nav>
@@ -32,53 +33,53 @@
 
   <main>
     <div class="slider">
-      <ul class="slides container">
-        <li class="slide slide-active">
-          <div class="slide-info">
-            <h1 class="slide-title">Долго, дорого, скрупулезно.</h1>
-            <p class="slide-text">Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-            <a href="blank.html" class="button slide-button">Узнать больше</a>
-          </div>
-          <div class="slide-image">
-            <img src="img/index-slide1.png" width="760px" height="431px" alt="">
-          </div>
-        </li>
+      <div class="slider-container container">
+        <ul class="slides">
+          <li class="slide slide-active">
+            <div class="slide-info">
+              <h1 class="slide-title">Долго, дорого, скрупулезно.</h1>
+              <p class="slide-text">Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
+              <a href="blank.html" class="button slide-button">Узнать больше</a>
+            </div>
+            <div class="slide-image">
+              <img src="img/index-slide1.png" width="760px" height="431px" alt="" class="slide-image-active">
+            </div>
+          </li>
 
-        <li class="slide">
-          <div class="slide-info">
-            <h1 class="slide-title">Любим математику как никто другой</h1>
-            <p class="slide-text">Никакого креатива, только математические формулы для расчета идеальных пропорций</p>
-            <a href="blank.html" class="button slide-button">Узнать больше</a>
-          </div>
-          <img src="img/index-slide2.png" width="760px" height="431px" alt="">
-        </li>
 
-        <li class="slide">
-          <div class="slide-info">
-            <h1 class="slide-title">Только ночь, только хардкор</h1>
-            <p class="slide-text">Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.
-            </p>
-            <a href="blank.html" class="button slide-button">Узнать больше</a>
-          </div>
-          <img src="img/index-slide3.png" width="760px" height="431px" alt="">
-        </li>
-      </ul>
+          <li class="slide">
+            <div class="slide-info">
+              <h1 class="slide-title">Любим математику как никто другой</h1>
+              <p class="slide-text">Никакого креатива, только математические формулы для расчета идеальных пропорций</p>
+              <a href="blank.html" class="button slide-button">Узнать больше</a>
+            </div>
+            <img src="img/index-slide2.png" width="760px" height="431px" alt="" class="slide-image-inactive">
+          </li>
 
-      <ul class="slider-white-buttons">
-        <li>
-          <!-- Сверстаю кружок на CSS-->
-          <button type="button" aria-label="Выбор первого слайдера" class="slider-white-buttons button-first"></button>
-        </li>
-        <li>
-          <!-- Сверстаю кружок на CSS-->
-          <button type="button" aria-label="Выбор второго слайдера" class="slider-white-buttons button-second"></button>
-        </li>
-        <li>
-          <!-- Сверстаю кружок на CSS-->
-          <button type="button" aria-label="Выбор третьего слайдера" class="slider-white-buttons button-third"></button>
-        </li>
-      </ul>
+          <li class="slide">
+            <div class="slide-info">
+              <h1 class="slide-title">Только ночь, только хардкор</h1>
+              <p class="slide-text">Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.
+              </p>
+              <a href="blank.html" class="button slide-button">Узнать больше</a>
+            </div>
+            <img src="img/index-slide3.png" width="760px" height="431px" alt="" class="slide-image-inactive">
+          </li>
+        </ul>
 
+        <ul class="slider-controls">
+          <li>
+            <button type="button" aria-label="Выбор первого слайдера"
+              class="slider-control slider-control-active"></button>
+          </li>
+          <li>
+            <button type="button" aria-label="Выбор второго слайдера" class="slider-control"></button>
+          </li>
+          <li>
+            <button type="button" aria-label="Выбор третьего слайдера" class="slider-control"></button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <ul class="product-types container">
@@ -126,7 +127,7 @@
       <section class="about-info">
         <h3 class="visually-hidden">Наши преимущества</h3>
         <div class="nerds-colored-logo">
-          <img src=" img/nerds-colored-logo.png" width="360px" height="208px" alt="">
+          <img src=" img/nerds-colored-logo.png" width="360px" height="208px" alt="" class="nerds-colored-logo-image">
         </div>
 
         <p class="about-subtitle about-subtitle-black">С 2004 года любим точность во всем:</p>
