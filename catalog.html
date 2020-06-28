@@ -41,7 +41,7 @@
       <section class="filters">
         <h2 class="visually-hidden">Фильтры макетов</h2>
 
-        <form class="filter" action="https://echo.htmlacademy.ru" method="get">
+        <form class="filter" method="get" action="https://echo.htmlacademy.ru">
 
           <fieldset class="filter-item">
             <legend>Стоимость</legend>
@@ -49,14 +49,16 @@
             <div class="range-filter">
 
               <div class="range-controls">
+
                 <div class="scale">
                   <div class="bar" style="
-                    width: 40%;
-                    margin-left: 10%
+                    width: 30%;
+                    margin-left: 20%
                     "></div>
                 </div>
+
                 <div class="toggle toggle-min" tabindex="0" style="
-                left: 10%
+                left: 20%
                 "></div>
                 <div class="toggle toggle-max" tabindex="0" style="
                 left: 50%
@@ -64,22 +66,27 @@
               </div>
 
               <div class="price-controls">
-                <label class="min-price"> от <input type="number" name="min-price" value="0" step="100">
+                <label class="min-price">
+                  от <input type="number" name="min-price" value="0" step="100">
                 </label>
 
-                <label class="max-price"> до <input type="number" name="max-price" value="15 000">
+                <label class="max-price">
+                  до <input type="number" name="max-price" value="15 000" step="100">
                 </label>
               </div>
+
             </div>
+
           </fieldset>
 
-          <fieldset class="fieldset filter-item-second">
+          <fieldset class="filter-item-radio">
             <legend class="page-subtitle page-subtitle-filters">Сетка:</legend>
             <ul class="radio">
 
               <li class="filter-option filter-radio">
                 <label>
-                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="adaptive" checked>
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type"
+                    value="adaptive" checked>
                   <span class="radio-icon radio-option"></span>
                   Адаптивная
                 </label>
@@ -87,7 +94,8 @@
 
               <li class="filter-option filter-radio">
                 <label>
-                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="fixed">
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type"
+                    value="fixed">
                   <span class="radio-icon radio-option"></span>
                   Фиксированная
                 </label>
@@ -95,7 +103,8 @@
 
               <li class="radio-last filter-option filter-radio">
                 <label>
-                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type" value="rubber">
+                  <input class="visually-hidden filter-input-radio filter-input" type="radio" name="net-type"
+                    value="rubber">
                   <span class="radio-icon radio-option"></span>
                   Резиновая
                 </label>
@@ -103,12 +112,13 @@
             </ul>
           </fieldset>
 
-          <fieldset class="fieldset">
+          <fieldset class="filter-item-checkbox">
             <legend class="page-subtitle page-subtitle-filters">Особенности:</legend>
             <ul class="checkbox">
               <li class="filter-option filter-checkbox">
                 <label>
-                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="slider" checked>
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="slider"
+                    checked>
                   <span class="checkbox-icon checkbox-option"></span>
                   Слайдер
                 </label>
@@ -116,7 +126,8 @@
 
               <li class="filter-option filter-checkbox">
                 <label>
-                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox" name="advantages-block">
+                  <input class="visually-hidden filter-input-checkbox filter-input" type="checkbox"
+                    name="advantages-block">
                   <span class="checkbox-icon checkbox-option"></span>
                   Блок преимуществ
                 </label>
@@ -158,7 +169,7 @@
         <h3 class="visually-hidden">Список макетов</h3>
 
         <div class="sort-panel">
-            <h5 class="page-subtitle sort-subtitle">Сортировать:</h5>
+          <h5 class="page-subtitle sort-subtitle">Сортировать:</h5>
 
           <nav class="sort-panel-right-column">
             <ul class="categorize">
@@ -247,8 +258,8 @@
       </section>
     </section>
 
-    <div class="map-and-marker">
-      <img src="img/map-with-marker.png" width="1440px" height="416px" alt="Карта">
+    <div class="map-container">
+      <img src="img/map-with-marker.png" width="1440px" height="416px" alt="Карта" class="map">
 
       <div class="container">
         <article class="contacts">
@@ -267,34 +278,30 @@
       <legend class="popup-title">Напишите нам</legend>
       <h2 class="popup-header">Напишите нам</h2>
       <div>
-        <img src="img/close-cross.png" width="21" height="21" alt="Закрыть форму" class="closing-cross">
+        <img src="img/form-cross.svg" width="21" height="21" alt="Закрыть форму" class="closing-cross">
       </div>
 
       <div class="two-inputs-in-row">
-        <p class="write-us-item">
-          <label>
-            <span class="input-label">Ваше имя</span>
-            <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column">
-          </label>
-        </p>
 
-        <p class="write-us-item">
-          <label>
-            <span class="input-label input-label-half-column">Ваш email</span>
-            <input type="text" name="email" placeholder="email@example.com" required class="input input-half-column">
-          </label>
-        </p>
-      </div>
-
-      <p class="write-us-item">
-        <label>
-          <span class="input-label">Текст письма</span>
-          <textarea name="message" rows="4" required class="input input-fullcolumn"
-            placeholder="  В свободной форме"></textarea>
+        <label class="write-us-item">
+          <span class="input-label">Ваше имя</span>
+          <input type="text" name="name" placeholder="Имя Фамилия" class="input input-half-column">
         </label>
 
-        </textarea>
-      </p>
+        <label class="write-us-item">
+          <span class="input-label input-label-half-column">Ваш email</span>
+          <input type="text" name="email" placeholder="email@example.com" class="input input-half-column">
+        </label>
+
+      </div>
+
+      <label class="write-us-item">
+        <span class="input-label">Текст письма</span>
+        <textarea name="message" rows="4" class="input input-full-column" placeholder="  В свободной форме"></textarea>
+      </label>
+
+      </textarea>
+
 
       <button type="submit" class="button appointment-button">Отправить</button>
     </fieldset>
@@ -307,21 +314,21 @@
 
     <div class="container footer-container">
 
-      <ul class="social-icons footer-item-first">
+      <ul class="social-icons footer-socials">
 
-        <li>
+        <li class="social-icons-item">
           <a href="" aria-label="Вконтакте" class="social-item">
             <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
           </a>
         </li>
 
-        <li>
+        <li class="social-icons-item">
           <a href="" aria-label="Фейсбук" class="social-item">
             <img src="img/fb-icon.svg" width="12" height="22" alt="Фейсбук">
           </a>
         </li>
 
-        <li>
+        <li class="social-icons-item">
           <a href="" aria-label="Инстаграм" class="social-item">
             <img src="img/insta-icon.svg" width="21" height="21" alt="Инстаграм">
           </a>
