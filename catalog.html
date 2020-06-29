@@ -51,18 +51,11 @@
               <div class="range-controls">
 
                 <div class="scale">
-                  <div class="bar" style="
-                    width: 30%;
-                    margin-left: 20%
-                    "></div>
+                  <div class="bar"></div>
                 </div>
 
-                <div class="toggle toggle-min" tabindex="0" style="
-                left: 20%
-                "></div>
-                <div class="toggle toggle-max" tabindex="0" style="
-                left: 50%
-                "></div>
+                <div class="toggle toggle-min" tabindex="0"></div>
+                <div class="toggle toggle-max" tabindex="0"></div>
               </div>
 
               <div class="price-controls">
@@ -71,7 +64,7 @@
                 </label>
 
                 <label class="max-price">
-                  до <input type="number" name="max-price" value="15 000" step="100">
+                  до <input type="number" name="max-price" value="15000" step="100">
                 </label>
               </div>
 
@@ -285,19 +278,19 @@
 
         <label class="write-us-item">
           <span class="input-label">Ваше имя</span>
-          <input type="text" name="name" placeholder="Имя Фамилия" class="input input-half-column">
+          <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column">
         </label>
 
         <label class="write-us-item">
           <span class="input-label input-label-half-column">Ваш email</span>
-          <input type="text" name="email" placeholder="email@example.com" class="input input-half-column">
+          <input type="text" name="email" placeholder="email@example.com" required class="input input-half-column">
         </label>
 
       </div>
 
       <label class="write-us-item">
         <span class="input-label">Текст письма</span>
-        <textarea name="message" rows="4" class="input input-full-column" placeholder="  В свободной форме"></textarea>
+        <textarea name="message" rows="4" class="input input-full-column" placeholder="  В свободной форме" required></textarea>
       </label>
 
       </textarea>
