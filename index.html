@@ -203,11 +203,11 @@
 
   </main>
 
-  <form action="https://echo.htmlacademy.ru" method="post" class="write-us-popup popup">
+  <form action="https://echo.htmlacademy.ru" method="post" class="write-us-popup popup write-us-form">
     <fieldset class="contact-form">
       <legend class="popup-title">Напишите нам</legend>
       <h2 class="popup-header">Напишите нам</h2>
-      <button class="closing-cross">
+      <button class="popup-close">
         <img src="img/form-cross.svg" width="21" height="21" alt="Закрыть форму" aria-label="Закрыть">
       </button>
 
@@ -215,19 +215,19 @@
 
         <label class="write-us-item">
           <span class="input-label">Ваше имя</span>
-          <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column">
+          <input type="text" name="name" placeholder="Имя Фамилия" required class="input input-half-column input-name-popup">
         </label>
 
         <label class="write-us-item">
           <span class="input-label input-label-half-column">Ваш email</span>
-          <input type="text" name="email" placeholder="email@example.com" required class="input input-half-column">
+          <input type="email" name="email" placeholder="email@example.com" required class="input input-half-column input-email-popup">
         </label>
 
       </div>
 
       <label class="write-us-item">
         <span class="input-label">Текст письма</span>
-        <textarea name="message" rows="4" class="input input-full-column" placeholder="В свободной форме" required></textarea>
+        <textarea name="message" rows="4" class="input input-full-column input-message-popup" placeholder="В свободной форме" required></textarea>
       </label>
 
       <button type="submit" class="button appointment-button">Отправить</button>
@@ -268,6 +268,8 @@
     </div>
 
   </footer>
+
+<script src="js/popup.js"></script>
 
 </body>
 

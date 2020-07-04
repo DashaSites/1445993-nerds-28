@@ -1003,6 +1003,15 @@ li:last-child .categorize-link {
   transform: translate(-50%, -50%);
 }
 
+.popup-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.popup-error {
+  animation: shake 0.6s;
+}
+
 .contact-form {
   padding-top: 63px;
   padding-right: 99px;
@@ -1013,7 +1022,7 @@ li:last-child .categorize-link {
   border: none;
 }
 
-.closing-cross {
+.popup-close {
   position: absolute;
   top: 78px;
   right: 90px;
@@ -1025,11 +1034,11 @@ li:last-child .categorize-link {
   background: transparent;
 }
 
-.closing-cross:hover {
+.popup-close:hover {
   opacity: 1;
 }
 
-.closing-cross:active {
+.popup-close:active {
   opacity: 0.1;
 }
 
@@ -1485,7 +1494,7 @@ textarea.input-full-column:invalid::placeholder {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  z-index: -1;
+  z-index: -2;
 }
 
 .interactive-map {
@@ -1499,17 +1508,44 @@ textarea.input-full-column:invalid::placeholder {
   z-index: -1;
 }
 
-/*
-.modal-map {
-  border: 7px solid var(--basic-white);
-  display: none;
+/* Animations */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.modal-map img {
-  display: block;
-}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
 
-.modal-map iframe {
-  border: none;
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
-*/
