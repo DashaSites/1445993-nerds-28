@@ -1519,6 +1519,7 @@ textarea.input-full-column:invalid::placeholder {
   top: 0;
   border: none;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Animations */
