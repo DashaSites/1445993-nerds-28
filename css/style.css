@@ -759,8 +759,8 @@ li:last-child .categorize-link {
 .catalog-item {
   display: block;
   background-color: var(--light-grey-background);
-  padding-top: 26px;
-  padding-bottom: 44px;
+  padding-top: 27px;
+  padding-bottom: 43px;
   text-align: center;
   box-sizing: border-box;
   padding-left: 60px;
@@ -787,7 +787,7 @@ li:last-child .categorize-link {
 }
 
 .catalog-item-card:hover .catalog-item-base {
-  border: none;
+  border-color: transparent;
 }
 
 .catalog-item-description {
@@ -1002,7 +1002,8 @@ li:last-child .categorize-link {
   padding-left: 50px;
   box-sizing: border-box;
   background: var(--basic-white);
-  z-index: 1;
+  position: absolute;
+  z-index: 5;
 }
 
 .write-us-popup {
@@ -1518,7 +1519,6 @@ textarea.input-full-column:invalid::placeholder {
   top: 0;
   border: none;
   transform: translateX(-50%);
-  z-index: -1;
 }
 
 /* Animations */
