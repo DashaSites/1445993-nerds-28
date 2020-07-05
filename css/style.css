@@ -293,7 +293,6 @@ img {
   color: var(--button-active-opacity);
   background-color: var(--red-dark);
   box-shadow: var(--box-shadow-button-active);
-  border-radius: 3px;
 }
 
 .slide-button {
@@ -301,6 +300,17 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.feedback-button {
+  width: 219px;
+}
+
+.feedback-button:hover,
+.feedback-button:active {
+  color: var(--basic-white);
+  background-color: var(--red-light);
+  box-shadow: none;
 }
 
 .container.product-types {
