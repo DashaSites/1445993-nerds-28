@@ -807,6 +807,8 @@ li:last-child .categorize-link {
   background-color: var(--catalog-item-background);
   margin: 0;
   display: block;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .catalog-item-name:hover {
@@ -990,6 +992,7 @@ li:last-child .categorize-link {
   padding-left: 50px;
   box-sizing: border-box;
   background: var(--basic-white);
+  z-index: 1;
 }
 
 .write-us-popup {
