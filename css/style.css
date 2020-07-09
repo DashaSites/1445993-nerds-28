@@ -183,7 +183,7 @@ img {
 }
 
 .site-navigation-item:hover,
-.user-navigation:hover {
+.user-navigation-item:hover {
   color: var(--red-light);
 }
 
@@ -528,10 +528,14 @@ li.about-list-item::before {
   margin-bottom: 15px;
 }
 
-.phone-number {
+.phone-number-block {
   padding: 0;
   margin: 0;
   margin-bottom: 34px;
+}
+
+.phone-number {
+  color: var(--text-header-grey);
 }
 
 .social-item {
@@ -650,6 +654,7 @@ li:last-child .categorize-link {
   height: 23px;
   display: inline-block;
   border: 2px solid var(--dark-grey);
+  vertical-align: middle;
   box-sizing: border-box;
   opacity: 0.4;
   border-radius: 3px;
@@ -660,6 +665,7 @@ li:last-child .categorize-link {
   height: 25px;
   display: inline-block;
   border: 4px solid var(--dark-grey);
+  vertical-align: middle;
   box-sizing: border-box;
   background-color: transparent;
   opacity: 0.4;
@@ -698,10 +704,11 @@ li:last-child .categorize-link {
   opacity: 0.4;
 }
 
-.radio-icon:hover,
-.radio-option:hover,
-.checkbox-icon:hover,
-.checkbox-option:hover {
+label:hover span.radio-option {
+  opacity: 1;
+}
+
+label:hover span.checkbox-option {
   opacity: 1;
 }
 
@@ -1394,6 +1401,7 @@ a.partner-logo-borodinski {
 
 .catalog-item-button {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .catalog-item-button:active {
@@ -1436,10 +1444,10 @@ li.checkbox-last {
   display: flex;
   justify-content: center;
   position: absolute;
-  left: -9px;
+  left: 537px;
   bottom: 97px;
   z-index: 10;
-  width: 100%;
+  width: 88px;
 }
 
 button.slider-control {
@@ -1454,6 +1462,11 @@ button.slider-control {
   padding: 0;
   margin-left: 17px;
   z-index: 20px;
+}
+
+.slider-control,
+.slider-control-active {
+  cursor: pointer;
 }
 
 button.slider-control.slider-control-active:before {
@@ -1598,7 +1611,7 @@ textarea.input-full-column:invalid:not(:empty)::placeholder {
 @keyframes shake {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translate(0, -50%);
   }
 
   10%,
@@ -1606,13 +1619,13 @@ textarea.input-full-column:invalid:not(:empty)::placeholder {
   50%,
   70%,
   90% {
-    transform: translateX(-10px);
+    transform: translate(-10px, -50%);
   }
 
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(10px);
+    transform: translate(10px, -50%);
   }
 }
