@@ -1,7 +1,6 @@
 var feedbackButton = document.querySelector(".feedback-button");
 var feedbackPopup = document.querySelector(".write-us-popup");
 var popupClose = feedbackPopup.querySelector(".popup-close");
-var feedbackForm = feedbackPopup.querySelector(".write-us-form");
 var popupName = feedbackPopup.querySelector(".input-name-popup");
 var popupEmail = feedbackPopup.querySelector(".input-email-popup");
 var popupMessage = feedbackPopup.querySelector(".input-message-popup");
@@ -33,7 +32,7 @@ popupClose.addEventListener("click", function (evt) {
   feedbackPopup.classList.remove("popup-error");
 });
 
-feedbackForm.addEventListener("submit", function (evt) {
+feedbackPopup.addEventListener("submit", function (evt) {
   if (!popupName.value || !popupEmail.value || !popupMessage.value) {
   evt.preventDefault();
   feedbackPopup.classList.remove("popup-error");
