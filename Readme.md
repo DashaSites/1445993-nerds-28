@@ -7,5 +7,6 @@ A static multipage website with interactive filters and a contact form.
 - HTML
 - CSS
 - JavaScript
+- Figma
 
 
