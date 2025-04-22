@@ -1,5 +1,5 @@
 ### Nerds: a landing page for a web design company
-A static multipage website with interactive filters and a contact form.
+My first practice project using pure HTML and CSS. A static multipage website with basic filters and a popup contact form implemented in vanilla JS.
 
 🔗  [Live demo](https://dashasites.github.io/)
 
